@@ -1,0 +1,17 @@
+server:
+  port: 8070
+
+keycloak:
+  realm: lab
+  # http://127.0.0.1:8080/auth/realms/lab/protocol/openid-connect/auth
+  auth-server-url: http://127.0.0.1:8080/auth
+  ssl-required: external
+  resource: sample-api
+  credentials:
+    secret: "0d0b7361-6a1b-48e3-9eff-c9e887380920"
+  use-resource-role-mappings: true
+  # utilizado para server-side apis (backend) sem negociação de login.
+  public-client: false
+  bearer-only: true
+  principal-attribute: preferred_username
+  cors: true
